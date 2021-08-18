@@ -1,5 +1,5 @@
-# Cloud Console
-Unidad M2U*
+# NOMBRE_DEL_EJERCICIO
+Unidad M2U2
 
 ## ¿Qué vamos a hacer?
 1. paso1
@@ -16,12 +16,12 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### 1 - Tarea
+### Tarea 1: xxx
 
-### 2 - Tarea
+### Tarea 2: xxx
 
 ## Resumen de entregas
-1. [nombre de archivo]: descripción
+1. M2U2-0-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
 1. [nombre de archivo]: descripción
 
 ## Limpiar recursos

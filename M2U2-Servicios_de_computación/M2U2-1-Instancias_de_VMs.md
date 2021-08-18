@@ -16,6 +16,10 @@ Unidad M2U2
 1. Puedes dividir tu escritorio en 2 ventanas horizontales, una con la consola y otra con las instrucciones.
 1. Si durante el ejericio debes acceder a Cloud Shell, puedes activarlo en el icono ">_" a la derecha en la barra superior azul. Puedes utilizar la terminal en la misma ventana de la consola o maximizarla y abrirla en una ventana nueva. También puedes acceder directamente a la terminal en [shell.cloud.google.com](https://shell.cloud.google.com) y al IDE en [ide.cloud.google.com](https://ide.cloud.google.com/).
 
+Para responder a todas las preguntas del ejercicio de forma agrupada, puedes crear antes de empezar un archivo a entregar llamado "M2U2-1-preguntas.txt". Recuerda identificar y ordenar cada pregunta seguida de su respuesta.
+
+Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
+
 ### Tarea 1: Crear una instancia de VM Linux
 Vamos a comenzar creando una instancia de VM Linux en el servicio de Google Compute Engine.
 
@@ -30,15 +34,15 @@ Vamos a crear una instancia de VM Linux y explorar las características disponib
     1. Arriba a la derecha verás una estimación del coste mensual de dicha instancia de VM, y los detalles del mismo.
     1. Hay un gran número de configuraciones de máquina disponibles, combinando familia de máquinas, serie y tipo de máquina.
     1. Comienza por mantener la configuración de máquina por defecto (familia: propoósito general, serie: E2, tipo de máquina: e2-medium), cambia la región y fíjate si cambia el precio:
-        1. *¿Qué regiones hay disponibles?*
-        1. *¿Hay alguna/s región/es notablemente más caras que otras?*
-        1. *¿Cuál es la región más cara y la más barata de Europa?*
+        1. *PREGUNTA: ¿Qué regiones hay disponibles?*
+        1. *PREGUNTA: ¿Hay alguna/s región/es notablemente más caras que otras?*
+        1. *PREGUNTA: ¿Cuál es la región más cara y la más barata de Europa?*
     1. Ahora selecciona de nuevo la región por defecto de "us-central1" y explora las diferentes configuraciones de máquina disponibles:
         1. Explora primero las familias y series, fijándote en la descripción de cada opción.
         1. Explora ahora los tipos de máquina, fijándote en cómo cambian los precios.
         1. Explora los tipos de máquina personalizados. Prueba varias configuraciones para encontrar sus limitaciones.
-        1. Seleccionando una instancia de propósito general E2, en los detalles de costes tienes un enlace a los costes de Compute Engine. Explora los costes mensuales de las instancias "m1-ultramem" y "m2-ultramem", *por curiosidad.*
-        1. Por último, explora varias combinaciones de regiones, zonas y configuración de máquina. *¿Están todas las configuraciones disponibles en todas las regiones y zonas? ¿En qué región y zonas de Europa hay el mayor número de combinaciones disponibles?*
+        1. Seleccionando una instancia de propósito general E2, en los detalles de costes tienes un enlace a los costes de Compute Engine. Explora los costes mensuales de las instancias "m1-ultramem" y "m2-ultramem", por curiosidad.
+        1. Por último, explora varias combinaciones de regiones, zonas y configuración de máquina. *PREGUNTA: ¿Están todas las configuraciones disponibles en todas las regiones y zonas? ¿En qué región y zonas de Europa hay el mayor número de combinaciones disponibles?*
     1. Comprueba los comandos equivalentes para la API REST o Cloud SDK al final de la página. Fíjate que la opción de línea de comandos incluye un botón para copiar e importar ese comando en Cloud Shell, que puede serte útil en alguna ocasión.
 1. Crea una instancia de VM con las siguientes características:
     - Nombre: vm-linux
@@ -47,8 +51,10 @@ Vamos a crear una instancia de VM Linux y explorar las características disponib
     - Disco de arranque: Debian GNU/Linux
     - Cortafuegos: Permitir tráfico HTTP y HTTPS
     - Deja el resto de opciones con los valores por defecto.
-1. Pulsa el botón de crear instancia y espera a que finalice su creación. *¿Cuántos segundos tarda en crearse una instancia de núcleo compartido?*
+1. Pulsa el botón de crear instancia y espera a que finalice su creación. *PREGUNTA: ¿Cuánto tarda apróx. tarda en crearse una instancia de núcleo compartido?*
 1. Cuando la instancia de VM se haya creado, en el listado haz click sobre su nombre para comprobar los detalles de la misma. Explora todas las opciones, tanto las características y configuración de la instancia como los botones de acción superiores.
+
+*ENTREGA: Toma una captura de pantalla de la página de detalles de la instancia.*
 
 #### Explorar los métodos de conexión
 Para instancias de VM Linux tenemos 2 métodos de conexión disponibles: SSH y puerto serie, siendo éste último utilizado normalmente sólo para debuguear instancias a las que no nos podemos conectdar por SSH o no se inician correctamente.
@@ -65,6 +71,8 @@ Intenta utilizar las 3 formas para explorar las posibilidades de conexión por S
     1. NOTA: Como nombre de usuario, utiliza tu dirección de correo electrónico excepto "@dominio.com", sólo el nombre.
     1. NOTA: Aunque utilizar OS Login sea lo más recomendable en una organización, por sencillez en el ejercicio utilizaremos en su lugar el método manual.
 
+*ENTREGA: Toma una captura de pantalla de la terminal SSH abierta con la consola web y con Cloud SDK local o Cloud Shell.*
+
 Una vez exploradas las distintas opciones, mantén una ventana de terminal SSH abierta a la instancia para continuar con el siguiente paso.
 
 #### Personalizar la instancia con una página web
@@ -79,15 +87,17 @@ Usando tu conexión de SSH a la misma, ejecuta los siguientes comandos:
 Por último, comprueba la conexión externa a la web:
 1. En la consola, en "Compute Engine > Instancias de VM", accede a la página de detalles de la instancia pulsando sobre su nombre.
 1. Comprueba que las reglas de cortafuegos de habilitar tráfico HTTP y HTTPS están activas.
-1. Busca el listado de las interfaces de red dee la instancia y pulsa en "nic0" o en "ver detalles" de la nic0.
+1. Busca el listado de las interfaces de red de la instancia y pulsa en "nic0" o en "ver detalles" de la nic0.
 1. Explora los detalles de la interfaz de red de la instancia. Esta página te ayudará a debuguear problemas de conectividad si se presentan en el futuro.
     1. Comprueba que la instancia tiene 2 etiquetas de red asignadas, "http-server" y "https-server".
     1. En cuanto a detalles de reglas de cortafuegos y rutas, revisa las reglas de cortafuegos relacionadas con dichas etiquetas de red ("default-allow-http" y "default-allow-https") y comprueba qué protocolos y puertos habilitan.
     1. En "Análisis de la red > Análisis de entrada", revisa los puertos y protocolos habilitados según origen.
-    1. *¿Debería la instancia de VM poder aceptar tráfico externo a su web en el puerto TCP:80?*
+    1. *PREGUNTA: ¿Debería la instancia de VM poder aceptar tráfico externo a su web en el puerto TCP:80?*
 1. Vuelve a la página del listado de instancias en "Compute Engine > Instancias de VM", busca la IP externa de la instancia y pulsa sobre la misma para que se abra en otra pestaña de tu navegador.
-1. Comprueba que la conexión se realiza por HTTP al puerto 80. Los navegadores actuals generalmente redireccionan a HTTPS por puerto 443 y nuestra web sólo es accesible por HTTP y puerto 80.
+1. Comprueba que la conexión se realiza por HTTP al puerto 80. Los navegadores actuales generalmente redireccionan a HTTPS por puerto 443 y nuestra web sólo es accesible por HTTP y puerto 80.
 1. La página por defecto del servidor Apache se debe mostrar, confirmando que hemos podido personalizar la instancia y permitir su tráfico desde el exterior.
+
+*ENTREGA: Toma una captura de pantalla de la web del servidor, donde se vea también la IP de la instancia en la URL del navegador.*
 
 **BONUS:** Haz un ping desde tu terminal local o Cloud Shell a la IP externa de la instancia para comprobar la conectividad con el comando "ping IP_INSTANCIA".
 
@@ -140,6 +150,8 @@ Para comprobar los scripts de inicio y apagado:
     1. Conéctate por SSH a la instancia a través de alguno de los métodos utilizados anteriormentee.
     1. Ejecuta el siguiente comando para comprobar el contenido del archivo creado por el script: "ls /var/tmp" y "cat /var/tmp/shutdown_script_output.txt"
 
+*ENTREGA: Toma una captura de pantalla del nuevo contenido de la web y del resultado del anterior comando "cat".*
+
 #### Detener y modificar la configuración de la instancia
 Vamos a comprobar qué posibilidades tenemos a la hora de modificar la instancia en ejecución y para qué casos debemos antes detener la instancia.
 
@@ -151,15 +163,15 @@ Vamos a comprobar qué posibilidades tenemos a la hora de modificar la instancia
 **Preguntas a responder:**
 Para cada una responde si se puede modificar en ejecución, detenida o no es posible.
 
-1. *¿Es posible cambiar el tipo de máquina?*
-1. *¿Es posible cambiar la zona?*
-1. *¿Es posible añadir o modificar las etiquetas?*
-1. *¿Es posible añadir una nueva interfaz de red?*
-1. *¿Es posible modificar las etiquetas de red?*
-1. *¿Es posible modificar el disco de arranque?*
-1. *¿Es posible añadir discos adicionales?*
-1. *¿Es posible cambiar los metadatos personalizados?*
-1. *¿Es posible cambiar la cuenta de servicio asignada?*
+1. *PREGUNTA: ¿Es posible cambiar el tipo de máquina?*
+1. *PREGUNTA: ¿Es posible cambiar la zona?*
+1. *PREGUNTA: ¿Es posible añadir o modificar las etiquetas?*
+1. *PREGUNTA: ¿Es posible añadir una nueva interfaz de red?*
+1. *PREGUNTA: ¿Es posible modificar las etiquetas de red?*
+1. *PREGUNTA: ¿Es posible modificar el disco de arranque?*
+1. *PREGUNTA: ¿Es posible añadir discos adicionales?*
+1. *PREGUNTA: ¿Es posible cambiar los metadatos personalizados?*
+1. *PREGUNTA: ¿Es posible cambiar la cuenta de servicio asignada?*
 
 Por último, modifica el tipo de máquina de la instancia a "e2-standard-2" e iníciala de nuevo.
 
@@ -178,6 +190,8 @@ Para crear una instancia Windows Server, sigue las siguientes instrucciones:
     - Disco de arranque: Disco persistente estándar de 50 GB
     - Deja el resto de opciones con los valores por defecto.
 
+*ENTREGA: Toma una captura de pantalla de la ventana de detalles de la instancia de Windows Server.*
+
 #### Explorar los métodos de conexión
 Para conectarnos a una instancia de Windows Server necesitamos establecer la contraseña de Windows, tener acceso a un cliente RDP y conectarnos por RDP a la misma.
 
@@ -194,9 +208,18 @@ Para conectarte por RDP a la instancia:
 
 En ambos casos, utiliza la IP externa de la instancia, tu nombre de usuario y contraseña para conectarte a la instancia.
 
+*ENTREGA: Toma una captura de pantalla del escritorio remoto de Windows Server por conexión RDP.*
+
 ## Resumen de entregas
-1. [nombre de archivo]: descripción
-1. [nombre de archivo]: descripción
+1. [M2U2-1-preguntas.txt]: Respuestas a todas las preguntas planteadas en el ejercicio.
+1. [M2U2-1-tarea_1-captura_1.jpg]: Captura de pantalla de la página de detalles de la instancia.
+1. [M2U2-1-tarea_1-captura_2.jpg]: Captura de pantalla de la terminal SSH abierta con la consola web.
+1. [M2U2-1-tarea_1-captura_3.jpg]: Captura de pantalla de la terminal SSH abierta con Cloud SDK local o Cloud Shell.
+1. [M2U2-1-tarea_1-captura_4.jpg]: Captura de pantalla de la web del servidor, donde se vea también la IP de la instancia en la URL del navegador.
+1. [M2U2-1-tarea_1-captura_5.jpg]: Captura de pantalla del nuevo contenido de la web.
+1. [M2U2-1-tarea_1-captura_6.jpg]: Captura de pantalla del resultado del anterior comando "cat".
+1. [M2U2-1-tarea_2-captura_1.jpg]: Captura de pantalla de la ventana de detalles de la instancia de Windows Server.
+1. [M2U2-1-tarea_2-captura_2.jpg]: Captura de pantalla del escritorio remoto de Windows Server por conexión RDP.
 
 ## Limpiar recursos
 Sigue las siguientes instrucciones con atención para limpiar los recursos y configuración utilizada en tu proyecto. De esta forma evitarás especialmente costes continuados y problemas en siguientes ejercicios.

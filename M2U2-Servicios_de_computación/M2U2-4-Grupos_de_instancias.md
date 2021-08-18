@@ -1,41 +1,84 @@
-# Cloud Console
-Unidad M2U*
+# Grupos de instancias
+Unidad M2U2 - Ejercicio 4
 
 ## ¿Qué vamos a hacer?
-1. grupos de instancias no admininstrados
-    1. crear instancia y personalizarla con web, cambiar nº de versión en HTML p. ej.
-    1. sacar imagen de disco, familia? tag?
-    1. eliminar instancia
-    1. crear 3 instancias con imagen de disco
-    1. crear fw
-    1. crear lb
-1. plantilla de instancia
-    1. crear plantilla de instancia a partir de imagen
-1. grupos de isntancias serverless
-    1. crear grupo de instancia, crear health-check
-    1. crear lb
-    1. aplicar fw
-    1. comprobar webapp
-1. grupos de instancias stateful
-    1. crear grupo de instancias
-    1. crear lb
-    1. aplicar fw
-    1. comprobar webapp
-1. actualizar instancias
-    1. crear nueva instancia con imagen y personalizarla, cambiar webapp
-    1. sacar nueva imagen de disco
-    1. eliminar instancia
-    1. crear plantilla de instancia a partir de la anterior con nuevo disco
-    1. mig serverless: comprobar política de actualización y actualizar, comprobar webapp
-    1. mig stateful: comprobar política de actualización, actualizar, comprobar webapp
-    1. uig: crear otras 3 vms con nueva imagen, crear uig con nuevas VMs, cambiar lb a nuevo uig, eliminar anterior uig e instancias
+1. Crear un grupo de instancias no administrados.
+1. Trabajar con plantillas de instancias para los grupos de instancias administrados.
+1. Crear un grupo de instancias administrado para aplicaciones serverless.
+1. Crear un grupo de instancias administrado para aplicaciones stateful.
+1. Actualizar aplicaciones en los diferentes grupos de instancias.
 
-### 1 - Tarea
+Para responder a todas las preguntas del ejercicio de forma agrupada, puedes crear antes de empezar un archivo a entregar llamado "M2U2-4-preguntas.txt". Recuerda identificar y ordenar cada pregunta seguida de su respuesta.
 
-### 2 - Tarea
+Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
+
+### Tarea 1: Grupos de instancias no administrados
+xxx
+
+#### Crear la imagen de disco base
+- Crear la instancia
+- instalar servidor web, ver si script lo personaliza
+- sacar imagen de disco y crear familia de imágenes, con tag v1
+- eliminar instancia
+
+#### Crear un grupo de instancias no administrado
+- crear 3 instancias heterogéneas en tamaño a partir de la imagen
+- crear FW
+- crear health check?
+- crear LB
+- comprobar acceso a la app
+
+### Tarea 2: Grupos de instancias administrados
+xxx
+
+#### Crear una plantilla de instancia
+- crear a partir de la imagen
+- aplicar fw
+
+#### Crear un grupo de instancias administrado serverless
+- Crear el grupo a partir de la plantilla
+- Crear LB
+- comprobar webapp
+
+#### Crear un grupo de instancias administrado stateful
+- Crear el grupo a partir de la plantilla
+- Crear LB
+- comprobar webapp
+- modificar estado en las instancias
+- comprobar webapp
+
+### Tarea 3: Actualización de aplicaciones en grupos de instancias
+xxx
+
+#### Actualizar la imagen de disco base
+- crear instancia
+- personalizarla con nueva versión
+- sacar nueva imagen de disco
+- eliminar imagen
+
+#### Actualizar la plantilla de instancia
+- crear nueva plantilla de instancia con nueva imagen
+
+#### Actualizar el grupo de instancias no administrado
+- crear nuevas instancias
+- añadir instancias al grupo
+- comprobar webapp
+- desvincular viejas instancias del grupo y eliminarlas
+- comprobar webapp
+- explicar que se puede hacer como mismo servicio de backend de LB u otro
+
+#### Actualizar el grupo de instancias administrado serverless
+- revisar política
+- actualizar
+- comprobar webapp
+
+#### Actualizar el grupo de instancias administrado stateful
+- revisar política
+- actualizar
+- comprobar webapp
 
 ## Resumen de entregas
-1. [nombre de archivo]: descripción
+1. M2U2-4-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
 1. [nombre de archivo]: descripción
 
 ## Limpiar recursos

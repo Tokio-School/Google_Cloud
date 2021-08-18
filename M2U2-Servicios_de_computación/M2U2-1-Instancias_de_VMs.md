@@ -1,5 +1,5 @@
 # Instancias de VMs
-Unidad M2U2
+Unidad M2U2 - Ejercicio 1
 
 ## ¿Qué vamos a hacer?
 1. Crear una instancia de VM Linux en la consola web
@@ -211,15 +211,15 @@ En ambos casos, utiliza la IP externa de la instancia, tu nombre de usuario y co
 *ENTREGA: Toma una captura de pantalla del escritorio remoto de Windows Server por conexión RDP.*
 
 ## Resumen de entregas
-1. [M2U2-1-preguntas.txt]: Respuestas a todas las preguntas planteadas en el ejercicio.
-1. [M2U2-1-tarea_1-captura_1.jpg]: Captura de pantalla de la página de detalles de la instancia.
-1. [M2U2-1-tarea_1-captura_2.jpg]: Captura de pantalla de la terminal SSH abierta con la consola web.
-1. [M2U2-1-tarea_1-captura_3.jpg]: Captura de pantalla de la terminal SSH abierta con Cloud SDK local o Cloud Shell.
-1. [M2U2-1-tarea_1-captura_4.jpg]: Captura de pantalla de la web del servidor, donde se vea también la IP de la instancia en la URL del navegador.
-1. [M2U2-1-tarea_1-captura_5.jpg]: Captura de pantalla del nuevo contenido de la web.
-1. [M2U2-1-tarea_1-captura_6.jpg]: Captura de pantalla del resultado del anterior comando "cat".
-1. [M2U2-1-tarea_2-captura_1.jpg]: Captura de pantalla de la ventana de detalles de la instancia de Windows Server.
-1. [M2U2-1-tarea_2-captura_2.jpg]: Captura de pantalla del escritorio remoto de Windows Server por conexión RDP.
+1. M2U2-1-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
+1. M2U2-1-tarea_1-captura_1.jpg: Captura de pantalla de la página de detalles de la instancia.
+1. M2U2-1-tarea_1-captura_2.jpg: Captura de pantalla de la terminal SSH abierta con la consola web.
+1. M2U2-1-tarea_1-captura_3.jpg: Captura de pantalla de la terminal SSH abierta con Cloud SDK local o Cloud Shell.
+1. M2U2-1-tarea_1-captura_4.jpg: Captura de pantalla de la web del servidor, donde se vea también la IP de la instancia en la URL del navegador.
+1. M2U2-1-tarea_1-captura_5.jpg: Captura de pantalla del nuevo contenido de la web.
+1. M2U2-1-tarea_1-captura_6.jpg: Captura de pantalla del resultado del anterior comando "cat".
+1. M2U2-1-tarea_2-captura_1.jpg: Captura de pantalla de la ventana de detalles de la instancia de Windows Server.
+1. M2U2-1-tarea_2-captura_2.jpg: Captura de pantalla del escritorio remoto de Windows Server por conexión RDP.
 
 ## Limpiar recursos
 Sigue las siguientes instrucciones con atención para limpiar los recursos y configuración utilizada en tu proyecto. De esta forma evitarás especialmente costes continuados y problemas en siguientes ejercicios.

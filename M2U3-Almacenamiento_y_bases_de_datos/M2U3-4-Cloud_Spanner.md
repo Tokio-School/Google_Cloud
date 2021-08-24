@@ -2,15 +2,9 @@
 Unidad M2U3
 
 ## ¿Qué vamos a hacer?
-1. crear instancia de spanner
-1. crear db de spanner
-1. explorar posibilidades esquema en consola
-1. crear esquema con código, tablas enlazadas
-1. subir datos con código
-1. modificar datos con transacción
-1. subir datos en consola
-1. queries en consola
-1. queries con gcloud
+1. Crear una instancia y base de datos en Cloud Spanner.
+1. Gestionar esquemas.
+1. Crear y consultar datos en la base de datos.
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -23,9 +17,31 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: xxx
+### Tarea 1: Crear una instancia de Cloud Spanner
+xxx
 
-### Tarea 2: xxx
+#### Crear la instancia de Cloud Spanner
+- crear la instancia
+
+#### Crear la base de datos
+- crear db de spanner
+
+#### Crear el esquema
+- explorar posibilidades esquema en consola
+- crear esquema con código, tablas enlazadas
+
+### Tarea 2: Administrar datos en Cloud Spanner
+xxx
+
+#### Subir datos
+- subir datos con código
+- modificar datos con transacción
+- subir datos en consola
+
+#### Consultar datos
+- queries en consola
+- queries en código (?)
+- queries con gcloud
 
 ## Resumen de entregas
 1. M2U3-4-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.

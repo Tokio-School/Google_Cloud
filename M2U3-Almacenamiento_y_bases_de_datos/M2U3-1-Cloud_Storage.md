@@ -2,16 +2,12 @@
 Unidad M2U3
 
 ## ¿Qué vamos a hacer?
-1. crear bucket con consola
-1. subir objetos con consola, descargar, eliminar
-1. subir objetos con gsutil, descargar, eliminar
-1. sincronizar directorios con gsutil en ambas direcciones
-1. cambiar perisos en bucket
-1. cambiar permisos en objetos, hacer objeto público
-1. gestión de ciclo de vida, consola
-    1. ver ciclo de vida con gsutil
-1. versionado de objetos - se podrá con consola o sólo gsutil?
-    1. comprobar versiones
+1. Crear un bucket en Cloud Storage.
+1. Gestionar objetos desde la consola web.
+1. Gestionar objetos y sincronizar directorios desde la línea de comandos.
+1. Gestionar las listas de control de acceso a Cloud Storage.
+1. Establecer reglas de ciclo de vida.
+1. Habilitar el versionado de objetos
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -24,9 +20,71 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: xxx
+### Tarea 1: Gestionar buckets y objetos
+xxx
 
-### Tarea 2: xxx
+#### Crear un bucket desde la consola
+- crear bucket desde la consola
+- ver opciones
+- establecer acceso granular
+
+#### Gestionar objetos desde la consola
+- subir archivo - imagen o texto
+- visualizar
+- descargar
+- eliminar
+
+#### Gestionar objetos con gsutil
+- crear archivo - texto
+- subir archivo
+- visualizar
+- descargar
+- eliminar
+
+#### Sincronizar directorios
+- crear subdirectorio
+- crear 2 archivos de texto
+- crear subsubdirectorio
+- crear 2 archivos de texto
+- sincronizar con gsutil rsync
+- comprobar en consola y gsutil - no existen subdirectorios
+- eliminar en local un arcihvo y crear otro
+- sincronizar de nuevo
+- comprobar en consola
+
+### Tarea 2: Gestionar las ACL a nivel granular
+xxx
+
+#### A nivel de bucket
+- revisar permisos
+- cambiar permisos - otra cuenta
+- eliminar permisos
+
+#### A nivel de objeto
+- revisar permisos
+- cambiar permisos - otra cuenta
+- eliminar permisos
+
+#### Hacer objeto público
+- cambiar permisos
+- revisar permisos, url pública, navegador privado
+- eliminar permisos
+
+### Tarea 3: Reglas de ciclo de vida y versionado de objetos
+xxx
+
+#### Reglas de ciclo de vida
+- establecer con consola
+- 30 días a nearline, 90 días a coldline, 1 año a archive, eliminar a 4 años
+- comprobar con gsutil
+
+#### Habilitar versionado de objetos
+- habilitar versionado de objetos - se podrá con consola o sólo gsutil?
+- subir más versión de archivo
+- comprobar
+- establecer regla de ciclo de vida
+- subir otra versión
+- ver cómo se eliminan versiones antiguas
 
 ## Resumen de entregas
 1. M2U3-1-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.

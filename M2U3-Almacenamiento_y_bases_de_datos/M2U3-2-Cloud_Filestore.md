@@ -2,15 +2,9 @@
 Unidad M2U3
 
 ## ¿Qué vamos a hacer?
-1. crear una instancia de filestore
-1. crear 2 vms
-1. montar FS en 2 vms
-1. escribir archivos
-1. comprobar que se comparte info
-1. copiar datos desde cloud storage
-1. copiar datos desde local
-1. crear backup
-1. restaurar desde backup y comprobar - cambiar antes files
+1. Montar una instancia de Cloud Filestore en varias instancias de VMs a la vez.
+1. Copiar datos desde Cloud Storage y local a Cloud Filestore.
+1. Trabajar con backups de Cloud Filestore.
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -23,9 +17,62 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: xxx
+### Tarea 1: Montar una instancia de Cloud Filestore en varias instancias de VMs
+xxxx
 
-### Tarea 2: xxx
+#### Crear una instancia de Cloud Filestore
+- crear la instancia
+
+#### Crear las instancias de VM
+- crear las 2 instancias
+
+#### Montar la instancia de Cloud Filestore como NFS en las 2 instancias de VM
+- conectarse a vm 1
+- montar nfs
+- repetir para vm 2
+
+#### Comprobar el acceso conjunto
+- conectarse a vm 1
+- escribir archivo
+- comprobar lectura
+- conectarse a vm 2
+- escribir archivo
+- comprobar lectura de ambos
+
+### Tarea 2: Copiar datos desde Cloud Storage y local al NFS compartido
+xxx
+
+#### Crear archivos en Cloud Storage
+- crear bucket con gsutil
+- crear subdirectorio y archivos
+- sincronizar con Cloud Storage desde Cloud Shell
+
+#### Sincronizar archivos desde Cloud Storage
+- conectarse a vm 1
+- rsync desde GCS a NFS
+- comprobar
+- modificar info
+- rsync
+- comprobar con gsutil
+
+#### Copiar archivos desde local
+- desde cloud shell, crear directorio y archivos
+- copiar a NFS con gcloud compute scp
+- conectarse a vm 1
+- copmrobar
+
+### Tarea 2: Trabajar con backups de Cloud Filestore
+xxx
+
+#### Crear un backup de una instancia
+- crear backup
+- listar backup
+
+#### Restaurar un backup a una instancia
+- conectarse a vm 1
+- cambiar info
+- restaurar backup
+- comprobar
 
 ## Resumen de entregas
 1. M2U3-2-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.

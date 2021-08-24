@@ -2,18 +2,9 @@
 Unidad M2U3
 
 ## ¿Qué vamos a hacer?
-1. crear una instancia de firestore en modo firestore
-1. en código:
-    1. subir documento
-    1. subir otro doc
-    1. índice compuesto
-    1. query doc - añadir orden y filtros
-    1. update doc
-    1. query doc
-1. en consola
-    1. query
-    1. subir
-    1. update
+1. Crear una instancia de Cloud Firestore.
+1. Gestionar datos con las librerías de cliente.
+1. Gestionar datos desde la consola.
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -26,9 +17,28 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: xxx
+### Tarea 1: Crear una instancia de Cloud Firestore
+xxx
 
-### Tarea 2: xxx
+- crear una instancia de firestore en modo firestore
+
+### Tarea 2: Gestionar datos con las librerías de cliente
+xxx
+
+#### Subir datos
+1. subir documento
+1. subir otro doc
+1. índice compuesto
+1. update doc
+
+#### Consultar datos
+1. query doc
+1. query doc - añadir orden y filtros
+
+### Tarea 3: Gestionar datos desde la consola
+1. query
+1. subir
+1. update
 
 ## Resumen de entregas
 1. M2U3-5-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.

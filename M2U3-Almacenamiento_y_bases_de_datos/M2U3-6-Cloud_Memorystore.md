@@ -2,11 +2,9 @@
 Unidad M2U3
 
 ## ¿Qué vamos a hacer?
-1. crear una instancia de memorystore
-1. crear una vm cliente
-1. conectarse desde el cliente
-1. desplegar una webapp de ejemplo en otra vm - crear fwr
-1. comprobar app
+1. Crear una instancia de Cloud Memorystore.
+1. Conectarnos desde una instancia de VM cliente.
+1. Desplegar una aplicación web de ejemplo.
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -19,9 +17,26 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: xxx
+### Tarea 1: Crear una instancia de Cloud Memorystore
+xxx
 
-### Tarea 2: xxx
+#### Crear una instancia de Cloud Memorystore
+- crear una instancia de memorystore
+
+#### Crear una instancia de VM cliente
+- crear una vm cliente
+
+#### Conexión desde el cliente
+- conectarse desde el cliente
+
+### Tarea 3: Desplegar una aplicación web de ejemplo
+xxx
+
+#### Desplegar la aplicación web
+- desplegar una webapp de ejemplo en otra vm - crear fwr
+
+#### Comprobar la aplicación web
+- comprobar app
 
 ## Resumen de entregas
 1. M2U3-6-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.

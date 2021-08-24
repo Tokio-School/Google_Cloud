@@ -2,16 +2,8 @@
 Unidad M2U3
 
 ## ¿Qué vamos a hacer?
-1. crear vm de cliente
-1. crear instancia de SQL con MySQL
-1. crear usuario
-1. gestionar acceso por roles IAM
-1. conectarse desde cloud Shell
-1. instalar cloud sql proxy en cloud shell
-1. subir datos desde cloud shell, comprobar redes autorizadas
-1. editar y hacer acceso privado
-1. Configurar Private Services Access
-1. conectarse desde cliente y verificar info
+1. Crear una instancia de Cloud SQL.
+1. Conectarnos a la misma de forma pública y privada.
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -24,9 +16,48 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: xxx
+### Tarea 1: Crear una instancia de Cloud SQL
+xxx
 
-### Tarea 2: xxx
+#### Crear la instancia de Cloud SQL
+- crear instancia de SQL con MySQL e IP pública
+- crear db
+
+#### Crear la instancia de VM cliente
+- crear vm de cliente
+
+### Tarea 2: Conexión pública a la instancia
+xxx
+
+#### Conexión a través de usuario de MySQL
+- crear usuario y password
+- conectarse a través de Cloud Shell como dicho usuario
+- comprobar redes autorizadas
+
+#### Conexión a través de Cloud SQL Auth proxy
+- instalar cloud sql proxy en cloud shell
+- setup proxy
+- conectarse a través de proxy
+
+#### Gestión de datos
+- subir datos
+- query datos
+- exportar datos a GCS
+
+### Tarea 3: Conexión privada a la instancia
+xxx
+
+#### Configurar la instancia como interna
+- configurar como ip privada
+- setup private services access
+
+#### Conectarse a instancia privada
+- conectarse a vm - instalar cliente mysql
+- conectarse a instancia
+
+#### Conexión a través de autenticación en la base de datos con IAM
+- setup
+- conect
 
 ## Resumen de entregas
 1. M2U3-3-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.

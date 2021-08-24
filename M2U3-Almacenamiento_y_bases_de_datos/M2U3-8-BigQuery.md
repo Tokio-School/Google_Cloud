@@ -2,19 +2,12 @@
 Unidad M2U3
 
 ## ¿Qué vamos a hacer?
-1. crear un dataset
-1. query public data - github
-1. bq:
-	1. subir datos
-	1. query data
-	1. eliminar dataset y tabla
-1. comparar tablas particionadas y no:
-	1. crear tabla no particionada y query
-	1. crear tabla particionada y query, comparar
-1. python:
-	1. query data
-	1. load data
-1. visualize data with data studio
+1. Gestionar datasets y tablas.
+1. Consultar datos públicos.
+1. Consultar datos desde la herramienta bq.
+1. Consultar datos desde las librerías de cliente.
+1. Trabajar con tablas particionadas.
+1. Visualizar datos con Data Studio.
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -27,9 +20,32 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: xxx
+### Tarea 1: Gestionar datasets y tablas
+xxx
 
-### Tarea 2: xxx
+- crear un dataset
+- crear una tabla
+
+### Tarea 2: Gestionar y consultar datos
+
+#### Consultar datos públicos
+1. query public data - github
+
+#### Gestionar datos con bq
+1. subir datos
+1. query data
+1. eliminar dataset y tabla
+
+#### Gestionar datos con las librerías de cliente
+1. query data
+1. load data
+
+#### Visualizar datos con Data Studio
+- visualize data with data studio
+
+### Tarea 3: Trabajar con tablas particionadas
+- crear tabla no particionada y query
+- crear tabla particionada y query, comparar
 
 ## Resumen de entregas
 1. M2U3-8-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.

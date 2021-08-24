@@ -2,16 +2,9 @@
 Unidad M2U3
 
 ## ¿Qué vamos a hacer?
-1. crear una instancia de bigtable
-1. cbt:
-    1. crear tabla
-    1. subir datos
-    1. modificar datos
-    1. eliminar datos
-    1. leer datos
-1. comprender cómo diseñar el esquema de nuestros datos
-1. importar datos con dataflow
-1. query data con java app
+1. Crear una instancia de Cloud Bigtable.
+1. Gestionar datos con la herramienta cbt.
+1. Consultar datos desde una aplicación.
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -24,9 +17,30 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: xxx
+### Tarea 1: Crear una instancia de Cloud Bigtable
+xxx
 
-### Tarea 2: xxx
+- crear una instancia de bigtable
+
+### Tarea 2: Gestionar datos con cbt
+xxx
+
+1. crear tabla
+1. subir datos
+1. modificar datos
+1. eliminar datos
+1. leer datos
+
+### Tarea 3: Consultar datos desde una aplicación
+xxx
+
+- comprender cómo diseñar el esquema de nuestros datos
+
+#### Importar datos
+- importar datos con dataflow
+
+#### Consultar datos
+- query data con java app
 
 ## Resumen de entregas
 1. M2U3-7-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.

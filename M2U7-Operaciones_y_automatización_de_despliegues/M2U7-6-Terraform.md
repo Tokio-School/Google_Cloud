@@ -1,12 +1,10 @@
-# Cloud Logging
+# IaC con Terraform
 Unidad M2U7
 
 ## ¿Qué vamos a hacer?
-1. Recibir logs de una instancia de VM con una aplicación web.
-1. Instalar el agente de operaciones.
-1. Visualizar logs por varios métodos.
-1. Exportar logs a Cloud Storage y BigQuery.
-1. Analizar logs de auditoría.
+1. Crear despliegues de IaC con Terraform.
+1. Utilizar el repositorio de Cloud Foundation Toolkit.
+1. Actualizar y eliminar despliegues.
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -15,44 +13,56 @@ Unidad M2U7
 1. Puedes dividir tu escritorio en 2 ventanas horizontales, una con la consola y otra con las instrucciones.
 1. Si durante el ejericio debes acceder a Cloud Shell, puedes activarlo en el icono ">_" a la derecha en la barra superior azul. Puedes utilizar la terminal en la misma ventana de la consola o maximizarla y abrirla en una ventana nueva. También puedes acceder directamente a la terminal en [shell.cloud.google.com](https://shell.cloud.google.com) y al IDE en [ide.cloud.google.com](https://ide.cloud.google.com/).
 
-Para responder a todas las preguntas del ejercicio de forma agrupada, puedes crear antes de empezar un archivo a entregar llamado "M2U7-2-preguntas.txt". Recuerda identificar y ordenar cada pregunta seguida de su respuesta.
+Para responder a todas las preguntas del ejercicio de forma agrupada, puedes crear antes de empezar un archivo a entregar llamado "M2U7-6-preguntas.txt". Recuerda identificar y ordenar cada pregunta seguida de su respuesta.
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: Recibir logs de una instancia de VM
+### Tarea 1: Terraform y Cloud Foundation Toolkit
 xxx
 
-#### Desplegar instancia de VM
-- desplegar instancia
-- instalar agente
-- comprobar agente
-- desplegar webapp
-- desplegar app
+#### Cloud Foundation Tookit
+- buscar repo
+- analizar repo
 
-#### Comprobar logs de la instancia y aplicación
-- crear carga a web
-1. comprobar logs de app y vm en consola
-1. comprobar logs de app y vm en gcloud
+#### Entorno de Terraform
+- configurar entorno
+- verificar autenticación y demás
 
-### Tarea 2: Exportar logs a Cloud Storage y BigQuery
+#### Desplegar despliegue de ejemplo
+- desplegar ejemplo
+- verificar con Terraform
+- verificar con consola
+- eliminar despliegue
+
+### Tarea 2: Administrar despliegues de IaC
 xxx
 
-#### Exportar logs a Cloud Storage
-- exportar logs a gcs
-- comprobar logs
+#### Crear plantilla de despliegue
+- buscar recursos
+- crear plantilla
+    - network y 2 subnets
+    - FR - SSH/ICMP interno
+    - instance template
+    - 2 vms en regiones diferentes
 
-#### Exportar logs a BigQuery
-- exportar a BQ
-- comprobar y analizar con SQL
+#### Desplegar la plantilla
+- desplegar plantilla
+- verificar despliegue con Terraform
+- verificar despliegue con consola
 
-### Tarea 3: Logs de auditoría
-xxx
+#### Modificar el despliegue
+- modificar la plantilla
+    - script startup
+    - FR - HTTP/S externo
+- redesplegar - focus en comando
+- verificar despliegue con Terraform
+- verificar despliegue con consola
 
-- ver dashboard de actividad
-- analizar logs de auditoría
+#### Eliminar el despliegue
+- eliminar deployments
 
 ## Resumen de entregas
-1. M2U7-2-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
+1. M2U7-6-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
 1. [nombre de archivo]: descripción
 
 ## Limpiar recursos

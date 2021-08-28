@@ -1,9 +1,8 @@
-# Google APIs Explorer
+# Planificación de costes
 Unidad M2U1
 
 ## ¿Qué vamos a hacer?
-1. Explorar las APIs de Google Cloud.
-1. Utilizar las APIs de Google Cloud para crear y administrar recursos.
+1. Planificar costes de Google Cloud y realizar presupuestos de ejemplo.
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -12,40 +11,46 @@ Unidad M2U1
 1. Puedes dividir tu escritorio en 2 ventanas horizontales, una con la consola y otra con las instrucciones.
 1. Si durante el ejericio debes acceder a Cloud Shell, puedes activarlo en el icono ">_" a la derecha en la barra superior azul. Puedes utilizar la terminal en la misma ventana de la consola o maximizarla y abrirla en una ventana nueva. También puedes acceder directamente a la terminal en [shell.cloud.google.com](https://shell.cloud.google.com) y al IDE en [ide.cloud.google.com](https://ide.cloud.google.com/).
 
-Para responder a todas las preguntas del ejercicio de forma agrupada, puedes crear antes de empezar un archivo a entregar llamado "M2U1-3-preguntas.txt". Recuerda identificar y ordenar cada pregunta seguida de su respuesta.
+Para responder a todas las preguntas del ejercicio de forma agrupada, puedes crear antes de empezar un archivo a entregar llamado "M2U1-7-preguntas.txt". Recuerda identificar y ordenar cada pregunta seguida de su respuesta.
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: APIs de Google Cloud
+### Tarea 1: Calculadora de costes y listado de precios
 xxx
 
-#### Explorador de APIs
-- abrir explorador de APIs
-- buscar APIs
-- comprobar referencia
-- comprobar opciones de autenticación
+#### Calculadora de costes de Google Cloud
+- acceder a calculadora de costes
+- explorarla
+- poner en €
+- algunos recursos de ejemplo
+- modificar recursos
+- guardar URL y enviarla por email
 
-#### Crear bucket de Cloud Storage
-- buscar API
-- revisar argumentos
-- crear bucket
-- listar bucket
-- comprobar en consola
-- eliminar bucket - NOTA: utilizar nombre de bucket único para este ejercicio: M2U1-3
-- comprobar en consola
+#### Listado de precios
+- buscar listado de precios GCE
+- buscar listado de precios GCS
+- buscar listado de precios redes
 
+### Tarea 2: Presupuesto de ejemplo 1
+xxx
 
-#### Crear instancia de VM
-- buscar API
-- revisar argumentos
-- crear instancia
-- listar instancias
-- comprobar en consola
-- eliminar instancia
-- comprobar en consola
+- presupuesto para entorno - ligero
+- entregas: url de presupuesto y coste total
+
+### Tarea 2: Presupuesto de ejemplo 1
+xxx
+
+- presupuesto para entorno - enterprise medium - varias apps
+- entregas: url de presupuesto y coste total
+
+### Tarea 2: Presupuesto de ejemplo 1
+xxx
+
+- presupuesto para entorno - enterprise heavy - shared vpc, entorno desarrollo, conexión híbrida, networking, etc.
+- entregas: url de presupuesto y coste total
 
 ## Resumen de entregas
-1. M2U1-3-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
+1. M2U1-7-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
 1. [nombre de archivo]: descripción
 
 ## Limpiar recursos

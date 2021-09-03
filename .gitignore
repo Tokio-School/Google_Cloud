@@ -142,3 +142,4 @@ cython_debug/
 
 # TO-DO file
 to-do.txt
+workdir/

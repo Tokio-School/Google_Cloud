@@ -1,5 +1,5 @@
 # Análisis de costes
-Unidad M2U1
+Unidad M2U1 - Ejercicio 6
 
 ## ¿Qué vamos a hacer?
 1. Exportar de forma automática los costes de GCP a BigQuery.

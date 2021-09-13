@@ -1,5 +1,5 @@
 # Cloud SDK
-Unidad M2U1
+Unidad M2U1 - Ejercicio 2
 
 ## ¿Qué vamos a hacer?
 1. Instalar e inicializar Cloud SDK en local.

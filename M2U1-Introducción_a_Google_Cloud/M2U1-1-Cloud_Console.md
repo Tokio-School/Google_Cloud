@@ -1,5 +1,5 @@
 # Cloud Console
-Unidad M2U1
+Unidad M2U1 - Ejercicio 1
 
 ## ¿Qué vamos a hacer?
 1. Explorar la consola de Google Cloud.

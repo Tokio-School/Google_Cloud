@@ -1,5 +1,5 @@
 # Entorno de trabajo
-Unidad M2U1
+Unidad M2U1 - Ejercicio 0
 
 ## ¿Qué vamos a hacer?
 1. Crear nuestro proyecto de Google Cloud y cuenta de facturación.

@@ -1,5 +1,5 @@
 # Planificación de costes
-Unidad M2U1
+Unidad M2U1 - Ejercicio 7
 
 ## ¿Qué vamos a hacer?
 1. Planificar costes de Google Cloud y realizar presupuestos de ejemplo.

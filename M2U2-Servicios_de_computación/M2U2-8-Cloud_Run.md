@@ -13,9 +13,7 @@ Unidad M2U2 - Ejercicio 8
 1. Puedes dividir tu escritorio en 2 ventanas horizontales, una con la consola y otra con las instrucciones.
 1. Si durante el ejericio debes acceder a Cloud Shell, puedes activarlo en el icono ">_" a la derecha en la barra superior azul. Puedes utilizar la terminal en la misma ventana de la consola o maximizarla y abrirla en una ventana nueva. También puedes acceder directamente a la terminal en [shell.cloud.google.com](https://shell.cloud.google.com) y al IDE en [ide.cloud.google.com](https://ide.cloud.google.com/).
 
-Para responder a todas las preguntas del ejercicio de forma agrupada, puedes crear antes de empezar un archivo a entregar llamado "M2U2-8-preguntas.txt". Recuerda identificar y ordenar cada pregunta seguida de su respuesta.
-
-Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
+*Nota: No hay preguntas para este ejercicio.*
 
 ### Tarea 1: Desplegar una aplicación web
 En esta primera tarea vamos a desplegar un contenedor serverless con una aplicación web Python desde nuestro entorno de desarrollo local.
@@ -118,7 +116,6 @@ Al igual que en otros servicios, podemos dividir el tráfico entre versiones:
 De esta forma hemos podido gestionar el tráfico de nuestra aplicación dividiéndolo entre varias revisiones, para hacer actualizaciones canary o tests A/B.
 
 ## Resumen de entregas
-1. M2U2-8-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
 1. M2U2-8-tarea_1-archivo_1-captura_1.jpg: Captura de pantalla del navegador mostrando la aplicación y la URL.
 1. M2U2-8-tarea_1-archivo_2-captura_2.jpg: Captura de pantalla de la aplicación en el navegador mostrando la URL del endpoint de Cloud Run.
 1. M2U2-8-tarea_1-archivo_3-captura_3.jpg: Captura de pantalla de la aplicación en el navegador mostrando la URL del endpoint de Cloud Run.

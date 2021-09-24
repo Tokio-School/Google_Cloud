@@ -44,7 +44,7 @@ Así podemos explorar cómo desarrollar y comprobar una aplicación web local an
 Ahora vamos a desplegar la aplicación web en App Engine:
 
 1. En la consola, navega a **APIs y servicios > Biblioteca** y busca y activa la API de App Engine.
-1. Navega a **App Engine > Panel**, pulsa en **Crear aplicación** y sigue las instrucciones para crear una aplicación o entorno de App Engine en europe-west (europe-west1 para App Engine).
+1. Navega a **App Engine > Panel**, pulsa en **Crear aplicación** y sigue las instrucciones para crear una aplicación o entorno de App Engine en europe-west3.
 1. Finalmente, vuelve a la terminal y despliegua tu aplicación en GAE: `gcloud app deploy`.
 1. Una vez desplegada, accede a la URL que devuelve el comando y comprueba tu aplicación en el navegador.
     1. También puedes recuperar la URL con `gcloud app browse`.

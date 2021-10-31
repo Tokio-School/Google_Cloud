@@ -1,5 +1,5 @@
 # NOMBRE_DEL_EJERCICIO
-Unidad M2U0
+Unidad M2U0 - Ejercicio 0
 
 ## ¿Qué vamos a hacer?
 1. paso1

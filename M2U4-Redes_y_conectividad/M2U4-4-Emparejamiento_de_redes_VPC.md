@@ -1,5 +1,5 @@
 # Emparejamiento de redes VPC
-Unidad M2U4
+Unidad M2U4 - Ejercicio 4
 
 ## ¿Qué vamos a hacer?
 1. Establecer conectividad interna entre redes con emparejamiento de redes VPC.
@@ -18,9 +18,14 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
 ### Tarea 1: Desplegar la topología de red
-xxx
+Una vez más vamos a comenzar desplegando la topología de red y las instancias de VM a utilizar durante el ejercicio.
 
 #### Crear las redes y subredes
+Crea las siguientes redes VPC:
+
+
+
+
 - crear 3 redes custom, vpc-A - vpc-B - vpc-C
 - comprobar que no hay solapamiento - calculadora de redes
 - crear 1 subred por red, en regiones diferentes - rangos diferentes!

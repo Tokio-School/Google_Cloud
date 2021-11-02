@@ -1,5 +1,5 @@
-# NOMBRE_DEL_EJERCICIO
-Unidad M2U0 - Ejercicio 0
+# Gestión de roles
+Unidad M2U5 - Ejercicio 2
 
 ## ¿Qué vamos a hacer?
 1. Explorar y comparar los roles disponibles y sus permisos.

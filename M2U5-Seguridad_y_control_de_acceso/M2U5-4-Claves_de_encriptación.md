@@ -1,9 +1,9 @@
-# NOMBRE_DEL_EJERCICIO
-Unidad M2U0 - Ejercicio 0
+# Claves de encriptación
+Unidad M2U5 - Ejercicio 4
 
 ## ¿Qué vamos a hacer?
-1. Utilizar claves de encriptación administradas por el usuario para Cloud Storage y discos persistentes.
-1. Utilizar claves de encriptación suministradas por el usuario para Cloud Storage y discos persistentes.
+1. Utilizar claves de encriptación administradas por el usuario (CMEK) para Cloud Storage y discos persistentes.
+1. Utilizar claves de encriptación suministradas por el usuario (CSEK) para Cloud Storage y discos persistentes.
 1. Utilizar la API para encriptar y desencriptar información.
 
 ### Antes de empezar

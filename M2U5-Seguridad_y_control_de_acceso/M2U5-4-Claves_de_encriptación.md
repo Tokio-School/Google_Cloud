@@ -17,62 +17,79 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: Crear claves de encriptación administradas por el usuario
-- habilitar API
-- crear keyring
-- crear 2 llaves con rotación automática
+### Tarea 1: Crear claves de encriptación administradas por el usuario (CMEK)
+Como habitualmente, comienza por habilitar la API del servicio, "Cloud KMS API" navegando a **API y servicios > Biblioteca**.
 
-### Tarea 2: Claves administradas por el usuario (CMEK)
+Crea un *llavero* y una *clave* con rotación automática en el mismo siguiendo estas instrucciones: [Creando claves de encriptación simétricas](https://cloud.google.com/kms/docs/creating-keys)
 
 #### CMEK en Cloud Storage
-- dar acceso a GCS SA a usar la clave 1
-- crear bucket y establecer CMEK
-- subir objeto
-- comprobar clave encriptación que usan
-- encriptar objeto con 2ª key y subir con gsutil
-- comprobar con "gsutil ls -L gs://file_path"
-- rotar key 1 manualmente
+Vamos a utilizar la CMEK para encriptar los datos de Cloud Storage. Para las siguientes instrucciones, básate en la documentación: [Usar CMEK](https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys), para la consola web o CLI:
+1. Crea un bucket de GCS y sube un archivo de ejemplo con texto desde local, como hemos visto en anteriores ejercicios, siguiendo el método que prefieras.
+1. Asigna la clave al agente de servicio de GCS.
+1. Establece la clave como la clave por defecto del bucket.
+1. Crea una nueva clave de encriptación en el llavero de Cloud KMS.
+1. Rota la clave de encriptación del objeto.
+1. Identifica la clave utilizada para encriptar el objeto.
+
+*ENTREGABLE: M2U5-tarea_1-archivo_1-captura_1.jpg: Captura de pantalla de la respuesta del comando, identificando la clave de Cloud KMS utilizada para encriptar el objeto.*
 
 #### CMEK en discos persistentes
-- crear disco y usar CMEK
-- crear vm y asignar disco
-- comprobar - escribir datos y leer
+Ahora vamos a utilizar la CMEK para encriptar los datos de un disco persistente de Compute Engine. Para las siguientes instrucciones, básate en la documentacion: [Proteger recusos usando claves de Cloud KMS](https://cloud.google.com/compute/docs/disks/customer-managed-encryption)
+1. Asigna la clave al agente de servicio de GCE.
+1. Crea un disco de arranque encriptado con dicha CMEK.
+1. Crea una instancia de VM con dicho disco de arranque.
+1. Crea una captura o *snapshot* de dicho disco de arranque encriptado.
+1. Conéctate a la instancia y comprueba que puede escribir y leer datos del disco de arranque encriptado.
 
-### Tarea 3: Claves suministradas por el usuario (CSEK)
+*ENTREGABLE: M2U5-tarea_1-archivo_2-captura_2.jpg: Captura de pantalla de la consola web, identificando la clave de Cloud KMS utilizada para encriptar el disco de arranque de la instancia de VM.*
+
+### Tarea 2: Claves suministradas por el usuario (CSEK)
 
 #### Generar claves
-- generar CSEK - nombre incluye bucket y nº pseudo-aleatorio
-- guardar clave en archivo
+Primero debemos generar la clave y el archivo de claves para GCE correspondiente:
+1. Genera una clave de encriptación RFC4648 en base64, bien la de ejemplo o bien con el script de Bash incluido: [Formato de clave requerido](https://cloud.google.com/compute/docs/disks/customer-supplied-encryption#required_key_format)
+1. Genera el archivo de claves JSON siguiendo este ejemplo: [Archivo de claves](https://cloud.google.com/compute/docs/disks/customer-supplied-encryption#key_file)
+Genera
 
 #### CSEK en Cloud Storage
-- crear archivo .boto y actualizar con clave
-- subir objeto a GCS y listar
-- eliminar, descargar y comprobar en local
-- generar 2ª clave
-- rotar claves en .boto
-- subir 2º objeto y listar
-- eliminar, descargar y comprobar en local
-- reencriptar 1er objeto y resubir
-- eliminar CSEK y comprobar acceso a objetos
+Las CSEK en GCS se utilizan objeto a objeto, no a nivel de bucket, y para interactuar con dichos objetos debemos tener disponibles las claves en local a través del archivo de configuración [boto](https://cloud.google.com/storage/docs/boto-gsutil):
+1. Comprueba que el archivo boto existe en tu entorno de CLI ([localización](https://cloud.google.com/storage/docs/boto-gsutil#location)) o recréalo ([Ejemplo usando el archivo de configuración](https://cloud.google.com/storage/docs/boto-gsutil#example)).
+1. Añade la clave de encriptación CSEK a tu archivo boto.
+1. Sube un nuevo objeto encriptado al bucket con gsutil: [Subida con tu clave de encriptación](https://cloud.google.com/storage/docs/encryption/using-customer-supplied-keys#gsutil).
+1. Utiliza gsutil para descargar el objeto encriptado de nuevo: [Descarga los objetos que has encriptado](https://cloud.google.com/storage/docs/encryption/using-customer-supplied-keys#download_objects_youve_encrypted).
+1. Comprueba con la consola web cómo no puedes acceder al objeto, ya que la petición debería ir acompañada de la CSEK, lo que no está disponible utilizando la consola web.
+
+*ENTREGABLE: M2U5-tarea_2-archivo_1-captura_1.jpg: Captura de pantalla de la consola web, identificando la clave de Cloud KMS utilizada para encriptar el objeto de GCS.*
 
 #### CSEK en discos persistentes
-- wrap clave
-- crear disco con CSEK wrapped
-- crear instancia con CSEK wrapped
-- tomar captura con CSEK wrapped
+Por último, utiliza la CSEK para encriptar también el contenido de un disco persistente de Compute Engine. Para ello, sigue la documentación: [Encriptar discos con CSEKs](https://cloud.google.com/compute/docs/disks/customer-supplied-encryption):
+1. Crea un disco de arranque y luego una instancia o directamente la instancia con un disco de arranque encriptado por dicho archivo JSON conteniendo la CSEK.
+1. Comprueba que la instancia de VM puede escribir y leer información en el disco de arranque encriptado.
+1. Crea una captura o *snapshot* del disco encriptado.
+1. Crea una nueva imagen a partir del disco encriptado.
+1. Crea un nuevo disco a partir del snapshot o imagen del disco encriptado.
+1. Crea una nueva instancia de VM a partir del nuevo disco.
+1. Comprueba que la nueva instancia de VM puede acceder a la información encriptada proveniente del disco de la instancia anterior.
+
+*ENTREGABLE: M2U5-tarea_2-archivo_2-captura_2.jpg: Captura de pantalla de la consola web, identificando la clave de Cloud KMS utilizada para encriptar el disco de arranque de la instancia de VM.*
 
 ### Tarea 4: Encriptar y desencriptar información con la API
-- encriptar con API
-- desencriptar con API
+Por último, vamos a encriptar y desencriptar un archivo local con la clave CMEK creada previamente:
+1. Crea un archivo local con un texto de ejemplo.
+1. Encripta dicho archivo: [Encriptar datos](https://cloud.google.com/kms/docs/create-encryption-keys?hl=en#encrypt_data)
+1. Desencripta y comprueba su contenido: [Desencriptar contenido cifrado](https://cloud.google.com/kms/docs/create-encryption-keys?hl=en#decrypt_ciphertext)
 
 ## Resumen de entregas
 1. M2U0-0-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
-1. [nombre de archivo]: descripción
+1. M2U5-tarea_1-archivo_1-captura_1.jpg: Captura de pantalla de la respuesta del comando, identificando la clave de Cloud KMS utilizada para encriptar el objeto.
+1. M2U5-tarea_1-archivo_2-captura_2.jpg: Captura de pantalla de la consola web, identificando la clave de Cloud KMS utilizada para encriptar el disco de arranque de la instancia de VM.
+1. M2U5-tarea_2-archivo_1-captura_1.jpg: Captura de pantalla de la consola web, identificando la clave de Cloud KMS utilizada para encriptar el objeto de GCS.
+1. M2U5-tarea_2-archivo_2-captura_2.jpg: Captura de pantalla de la consola web, identificando la clave de Cloud KMS utilizada para encriptar el disco de arranque de la instancia de VM.
 
 ## Limpiar recursos
 Sigue las siguientes instrucciones con atención para limpiar los recursos y configuración utilizada en tu proyecto. De esta forma evitarás especialmente costes continuados y problemas en siguientes ejercicios.
 
-1. Eliminar la instancia de VM y discos persistentes.
+1. Eliminar las instancias de VM, discos persistentes, snapshots e imágenes.
 1. Eliminar el bucket de GCS.
 1. Eliminar los objetos en el entorno local.
 1. Eliminar las claves de encriptación de Cloud KMS y el archivo `.boto`.

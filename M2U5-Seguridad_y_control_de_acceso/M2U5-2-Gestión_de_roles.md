@@ -121,6 +121,8 @@ Ahora vamos a deshabilitar el rol para comprobar cómo podemos detener su uso po
 1. Habilita el rol de nuevo
 1. Comprueba cómo ahora la cuenta de servicio puede realizar dichas operaciones de nuevo
 
+*ENTREGABLE: M2U5-2-tarea_2-archivo_1-captura_1.jpg: Captura de pantalla mostrando el rol personalizado en la consola web.*
+
 Por último, elimina el rol y comprueba:
 1. Que el rol no aparece en la lista de roles
 1. Que el rol no aparece asignado a la cuenta de servicio
@@ -128,6 +130,7 @@ Por último, elimina el rol y comprueba:
 
 ## Resumen de entregas
 1. M2U5-2-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
+1. M2U5-2-tarea_2-archivo_1-captura_1.jpg: Captura de pantalla mostrando el rol personalizado en la consola web.
 
 ## Limpiar recursos
 Sigue las siguientes instrucciones con atención para limpiar los recursos y configuración utilizada en tu proyecto. De esta forma evitarás especialmente costes continuados y problemas en siguientes ejercicios.

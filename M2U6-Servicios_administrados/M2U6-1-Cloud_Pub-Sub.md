@@ -1,13 +1,11 @@
 # Cloud Pub/Sub
-Unidad M2U6
+Unidad M2U6 - Ejercicio 1
 
 ## ¿Qué vamos a hacer?
 1. Crear una aplicación que envía y recibe mensajes.
 1. Crear un esquema para un tema.
 1. Utilizar suscripciones de tipo pull y push.
 1. Desplegar arquitecturas de 1 a 1 y 1 a varios.
-1. Explorar las opciones de filtrado y ordenado de mensajes.
-1. Utilizar temas de "dead letter".
 
 ### Antes de empezar
 1. Accede a la consola web: [Google Cloud Console](https://console.cloud.google.com).
@@ -21,79 +19,82 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
 ### Tarea 1: Desplegar esquema "publisher"/"suscriber"
-xxx
+En esta primera tarea vamos a comenzar por crear un tema de Pub/Sub y varias suscripciones simples para comprobar los conceptos fundamentales del servicio.
 
-#### Crear un tema y suscripción pull
-- crear un tema
-- crear una suscripción pull al tema
+Como es habitual, comienza por habilitar la API:
+1. En la consola web, navega a **APIs y servicios > Biblioteca**
+1. Busca la API de Cloud Pub/Sub y habilítala
 
-#### Comprobar mensajes con la consola
-- enviar mensaje con consola
-- comprobar mensaje con consola
-- confirmar mensaje con consola
+#### Crear un tema
+Vamos a comenzar por crear una pareja de tema para enviar mensajes de Pub/Sub.
 
-#### Comprobar mensajes con Cloud SDK
-- enviar mensaje con gcloud
-- comprobar mensaje con gcloud
-- confirmar mensaje con gcloud
+Para ello, sigue los siguientes pasos:
+1. En la consola web, navega a **Pub/Sub > Temas**
+1. Pulsa el botón **Crear tema**
+1. Asígnale una ID de tema y descripción que consideres
+1. Deshabilita la opción **Añadir una suscripción por defecto**
+1. Deja el resto de opciones con sus valores por defecto
+1. Pulsa **Crear tema**
 
-#### Deplegar emisor y receptor
-- desplegar emisor en CF
-- desplegar receptor en CF
-- enviar mensajes y comprobar recepción
+De esta forma contamos ya con un tema que podemos usar para enviar mensajes
 
-### Tarea 2: Esquemas, filtrado y ordenado de mensajes y temas "dead letter"
-xxx
+#### Crear una suscripción de tipo pull
+Vamos a continuar creando una suscripción de tipo pull simple conectada al tema creado.
 
-#### Crear un tema con esquema
-- crear esquema
-- crear tema y asignarle esquema
-- crear suscripción
-- enviar mensaje erróneo
-- comprobar que no va
-- enviar mensaje correcto
-- comprobar envío
+Para ello, sigue los siguientes pasos:
+1. En la consola web, navega a **Pub/Sub > Suscripciones**
+1. Pulsa el botón **Crear suscripción**
+1. Asígnale una ID de suscripción y una descripción que consideres
+1. Como tema, selecciona el tema creado en el paso anterior
+1. Como tipo de envío, selecciona "extraer" o "pull"
+1. Deja el resto de opciones con sus valores por defecto
+1. Pulsa **Crear suscripción**
 
-#### Ordenado de mensajes
-- crear tema con ordenado
-- enviar mensaje - id 1
-- confirmar recepción
-- enviar mensaje - id 3
-- confirmar recepción
-- enviar mensaje desordenado - id 2
-- confirmar recepción de id 2 e id 3
+Así hemos creado una suscripción de tipo pull para el tema de Pub/Sub.
 
-#### Filtrado de mensajes
-- crear suscripción con filtrado (tema anterior)
-- enviar mensaje normal - no supera filtro
-- confirmar recepción en 1ª susc
-- enviar mensaje supera filtro
-- confirmar recepción en ambas susc
+#### Comprobar mensajes con la consola y Cloud SDK
+Para comprobar la conexión entre tema y suscripción, vamos a publicar y verificar algunos mensajes:
+1. En la consola web, navega a **Pub/Sub > Temas** y pulsa en el tema creado
+1. En la pestaña **Mensajes > Detalles del tema**, pulsa **Publicar mensaje**
+1. Añade un cuerpo de mensaje con un texto y algunos atributos, p. ej. `hola mundo!` y `foo=bar`
 
-#### Temas "dead letter"
-- añadir tema dead letter a tema
-- configurar reintento rápido
-- crear suscripción para tema dead letter
-- desplegar que devuelve error directamente
-- enviar mensaje
-- confirmar recepción en suscripción dead letter con consola/gcloud
+Ahora vamos a comprobar que la suscripción recibe dicho mensaje:
+1. En la consola web, navega a **Pub/Sub > Suscripciones**
+1. Pulsa en la suscripción creada
+1. En la pestaña **Mensajes**, pulsa el botón **Pull** y comprueba en mensaje enviado
 
-### Tarea 3: Suscripciones de tipo push
-xxx
+De esta forma podemos verificar la configuración de temas y suscripciones desde la consola o línea de comandos.
 
-#### Enviar mensajes en paralelo
-- crear tema
-- crear 2 suscripciones push
-- crear 2 CF
-- enviar mensajes con gcloud
-- confirmar mensajes en ambas CF
+#### Deplegar emisor y receptor para una suscripción de tipo push
+Por último, vamos a desplegar 2 aplicaciones, emisor y receptor, que se comunicarán a través de mensajes con una suscripción de tipo "push".
+
+Para ello, sigue los siguientes pasos:
+1. Crea una instancia de VM de núcleo compartido de Debian 10 con la cuenta de servicio por defecto de Compute Engine, para que disponga de permisos para llamar a la API de Cloud Pub/Sub y conéctate por SSH
+1. Instala la librería de Cloud Client Library para Python: `pip install --upgrade google-cloud-pubsub`
+1. Crea un script de Python llamado `publisher.py` que utilizaremos para publicar mensajes al tema: [publisher.py](https://github.com/googleapis/python-pubsub/blob/HEAD/samples/snippets/publisher.py)
+1. En `publisher.py`, sustituye los valores de `project_id` por tu ID de proyecto y `topic_id` por la ID de tu tema de Pub/Sub en la función `publish_messages_with_error_handler`
+1. Mantén la ventana de SSH abierta, ya que más tarde ejecutarás el script `publisher.py` para enviar múltiples mensajes
+1. En la consola web, navega a **Cloud Functions** y despliega una función con activador HTTP de Python 3 con este código: [main.py](https://github.com/GoogleCloudPlatform/python-docs-samples/blob/main/functions/pubsub/main.py) y [requirements.txt](https://github.com/GoogleCloudPlatform/python-docs-samples/blob/main/functions/pubsub/requirements.txt)
+1. Anota la URL del endpoint de la función de Cloud Functions
+1. Ahora navega a **Pub/Sub > Suscripciones** y crea una suscripción de tipo "enviar" o "push" para el tema creado, con la URL de la función como extremo
+
+Por último, comprueba tu despliegue:
+1. En la ventana SSH de la instancia de VM, ejecuta el script para enviar múltiples mensajes al tema: `python publisher.py [ID_PROYECTO] publish-with-error-handler [ID_TEMA]`
+1. En la consola web, navega a **Cloud Functions**, pulsa el nombre de tu función y revisa los logs de la misma
+1. La publicación de mensajes puede tardar unos segundos para cada uno, un par de minutos en total. Si no aparecen los logs, revísalo de nuevo pasados unos segundos.
+
+De esta forma hemos desplegado una aplicación de emisor y otra de receptor, enviando mensajes de Pub/Sub a través de una suscripción de tipo push desde una instancia de VM a un destino serverless en una función de Cloud Functions.
+
+Como bonus, estos mensajes se han enviado al tema creado, que cuenta con 2 suscripciones, una de tipo pull y otra push, por lo que hemos desplegado una arquitectura de mensajería de 1 a muchos o "fan-out".
+
+*ENTREGABLES: M2U6-1-tarea_1-archivo_1-captura_1.jpg: Captura de pantalla mostrando los logs de invocación de la función de Cloud Functions.*
 
 ## Resumen de entregas
-1. M2U6-1-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
-1. [nombre de archivo]: descripción
+1. M2U6-1-tarea_1-archivo_1-captura_1.jpg: Captura de pantalla mostrando los logs de invocación de la función de Cloud Functions.
 
 ## Limpiar recursos
 Sigue las siguientes instrucciones con atención para limpiar los recursos y configuración utilizada en tu proyecto. De esta forma evitarás especialmente costes continuados y problemas en siguientes ejercicios.
 
-1. paso1
-1. paso2
+1. Elimina las suscripciones y tema de Pub/Sub
+1. Elimina la instancia de VM creada
+1. Elimina la función de Cloud Functions creada

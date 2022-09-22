@@ -1,11 +1,10 @@
 # Cloud Logging
-Unidad M2U7
+Unidad M2U7 - Ejercicio 2
 
 ## ¿Qué vamos a hacer?
 1. Recibir logs de una instancia de VM con una aplicación web.
 1. Instalar el agente de operaciones.
 1. Visualizar logs por varios métodos.
-1. Exportar logs a Cloud Storage y BigQuery.
 1. Analizar logs de auditoría.
 
 ### Antes de empezar
@@ -19,44 +18,58 @@ Para responder a todas las preguntas del ejercicio de forma agrupada, puedes cre
 
 Encontrarás las preguntas entre el texto en cursiva: *PREGUNTA: ¿Cómo se llama el servicio de instancias de VMs de Google Cloud?*
 
-### Tarea 1: Recibir logs de una instancia de VM
-xxx
+### Tarea 1: Logs de una instancia de VM
+En esta primera tarea, vamos a trabajar con los logs creados por una instancia de VM con un servidor web.
+
+Estos logs recogerán todo lo enviado a syslog, stdout y stderr en la instancia, y serán enviados a Cloud Logging, desde donde podremos revisarlos junto al resto de logs.
 
 #### Desplegar instancia de VM
-- desplegar instancia
-- instalar agente
-- comprobar agente
-- desplegar webapp
-- desplegar app
+Primero comienza por desplegar la instancia de VM y un servidor web.
+
+Para ello, sigue los siguientes pasos:
+1. Crea una instancia de VM de Debian con acceso HTTP
+1. Conéctate por SSH, instala un servidor web Apache y comprueba su acceso
+1. Instala el agente de Ops: [Instalar la última versión del agente (Linux)](https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent/installation#agent-install-latest-linux)
+1. Haz múltiples peticiones a la aplicación web accediendo a la IP de la instancia en tu navegador
+
+De esta forma hemos desplegado una instancia de VM con el agente de Ops instalado y hemos generado logs con el tráfico a la aplicación web.
 
 #### Comprobar logs de la instancia y aplicación
-- crear carga a web
-1. comprobar logs de app y vm en consola
-1. comprobar logs de app y vm en gcloud
+Para comprobar los logs de la instancia, podemos hacerlo desde la página de la instancia o desde Cloud Logging:
+1. En la consola web, navega a **Compute Engine > Instancias de VM** y pulsa sobre el nombre de tu instancia
+1. Pulsa sobre el botón **Registros**
+1. Este botón te llevará a la interfaz de Cloud Logging de **Registros** con los logs de tu instancia ya filtrados
 
-### Tarea 2: Exportar logs a Cloud Storage y BigQuery
-xxx
+Explora la interfaz de Cloud Logging y familiarízate con sus opciones:
+1. Filtrar logs de un servicio o recurso en concreto
+1. Modificar el período de tiempo
+1. Modificar el orden de registros, por orden de tiempo ascendiente o descendiente
+1. Filtrar según nivel de importancia
 
-#### Exportar logs a Cloud Storage
-- exportar logs a gcs
-- comprobar logs
+*ENTREGABLE: M2U7-2-tarea_1-archivo_1-captura_1.jpg: Captura de pantalla de Cloud Logging mostrando los logs de la instancia de VM.*
 
-#### Exportar logs a BigQuery
-- exportar a BQ
-- comprobar y analizar con SQL
+### Tarea 2: Logs de auditoría
+Ahora vamos a trabajar con los logs de auditoría. Estos logs nos permitirán ver quién ha hecho qué operación, cuándo y en qué recurso, para mantener una auditoría de operaciones y seguridad.
 
-### Tarea 3: Logs de auditoría
-xxx
+#### Logs de auditoría de administrador
+Primero realiza varias operaciones que generen logs de auditoría de administrador:
+1. Crea un bucket de Cloud Storage, reserva una dirección de IP estática externa y crea una regla de cortafuegos cualquiera
 
-- ver dashboard de actividad
-- analizar logs de auditoría
+Ahora comprueba dichos logs de auditoría:
+1. En la consola web, navega a la página de inicio y pulsa en la pestaña **Actividad**
+1. Revisa dichos logs. Puedes utilizar los filtros en la columna de la derecha para filtrar entre ellos
+1. Ahora navega a **Registros > Explorador de registros**
+1. En el menú desplegable **Nombre de registro**, busca **CLOUD AUDIT > actividad**
+1. Revisa los logs en los resultados de la búsqueda
+
+*ENTREGABLE: M2U7-2-tarea_2-archivo_1-captura_1.jpg: Captura de pantalla de Cloud Logging mostrando los logs de auditoría de administrador.*
 
 ## Resumen de entregas
-1. M2U7-2-preguntas.txt: Respuestas a todas las preguntas planteadas en el ejercicio.
-1. [nombre de archivo]: descripción
+1. M2U7-2-tarea_1-archivo_1-captura_1.jpg: Captura de pantalla de Cloud Logging mostrando los logs de la instancia de VM.
+1. M2U7-2-tarea_2-archivo_1-captura_1.jpg: Captura de pantalla de Cloud Logging mostrando los logs de auditoría de administrador.
 
 ## Limpiar recursos
 Sigue las siguientes instrucciones con atención para limpiar los recursos y configuración utilizada en tu proyecto. De esta forma evitarás especialmente costes continuados y problemas en siguientes ejercicios.
 
-1. paso1
-1. paso2
+1. Elimina la instancia de VM creada, el bucket de Cloud Storage y la regla de cortafuegos
+1. Libera la dirección de IP estática externa

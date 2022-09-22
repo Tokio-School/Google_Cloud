@@ -1,5 +1,5 @@
 # Integración y despliegue contínuo
-Unidad M2U7
+Unidad M2U7 - Ejercicio 4
 
 ## ¿Qué vamos a hacer?
 1. Crear triggers automáticos en un repositorio remoto para ejecutar pipelines de CI/CD.

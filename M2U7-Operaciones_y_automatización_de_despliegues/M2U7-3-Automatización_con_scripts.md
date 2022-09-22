@@ -1,5 +1,5 @@
 # Automatización con scripts
-Unidad M2U7
+Unidad M2U7 - Ejercicio 3
 
 ## ¿Qué vamos a hacer?
 1. Automatizar infraestructura con scripts de Bash y Python.
@@ -38,10 +38,6 @@ xxx
 - ejemplo completo - crear/levantar/apagar vms - arg nombre y zona - comprobar si ya están creadas/levantadas/apagadas
 
 ### Tarea 2: Scripts de Python
-xxx
-
-- 
-
 1. formats - flags - verbose - labels
 1. script python
 1. script bash

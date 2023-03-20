@@ -47,7 +47,7 @@ Crea en entorno en local y descarga el código:
 Comprueba la función ejecutándola en local:
 1. Despliega la función en un servidor local con el comando `gunicorn --bind :8080 --workers 1 --threads 8 --timeout 0 main:app`.
 1. Ahora comprueba la función:
-    1. Desde la línea de comandos: `curl localhost:8080`.
+    1. Desde la línea de comandos (en otra pestaña): `curl localhost:8080`.
     1. Desde la previsualización web de Cloud Shell o en tu navegador local: `http://localhost:8080`.
 1. Puedes detener el servidor local con `CTRL + C`.
 
@@ -79,8 +79,8 @@ Ahora vamos a configurar el servicio/aplicación con una pipeline de CI/CD integ
 
 Primero crea un repositorio de código:
 1. Crea un repositorio en Cloud Source Repositories: `gcloud source repos create helloworld`.
-1. Crea un nuevo subdirectorio de trabajo: `mkdir ~/M2U2-8-Cloud_Run/tarea2` y `cd ~/M2U2-8-Cloud_Run/tarea2`.
-1. Clona el repositorio de Cloud Source Repositories: `gcloud source repos clone helloworld`.
+1. Crea un nuevo subdirectorio de trabajo: `mkdir ~/M2U2-8-Cloud_Run/tarea_2` y `cd ~/M2U2-8-Cloud_Run/tarea_2`.
+1. Clona el repositorio de Cloud Source Repositories: `gcloud source repos clone helloworld` y `cd helloworld`.
 
 Luego configura la implementación contínua de Cloud Run:
 1. En la consola, navega a **Cloud Run**, pulsa sobre el servicio **helloworld** y luego sobre **Configurar implementación continua**.
@@ -111,7 +111,7 @@ Al igual que en otros servicios, podemos dividir el tráfico entre versiones:
 
 1. En la consola, dentro de la página de detalles del servicio **helloworld** de Cloud Run, selecciona la pestaña **Revisiones**.
 1. Pulsa sobre **Administrar el tráfico** y divídelo al 50/50 entre ambas revisiones.
-1. Una vez actualizado, accede a la URL del servicio en tu navegador y comprueba que redirige a ambas revisiones con un ratio 50/50.
+1. Una vez actualizado, accede a la URL del servicio en tu navegador y comprueba que redirige a ambas revisiones aleatoriamente.
 
 De esta forma hemos podido gestionar el tráfico de nuestra aplicación dividiéndolo entre varias revisiones, para hacer actualizaciones canary o tests A/B.
 
